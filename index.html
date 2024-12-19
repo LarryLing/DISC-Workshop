@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Assignment 3</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="title-search">
+            <h2 class="title">
+                CatsConnect
+            </h2>
+            <input type="text" class="search-bar" placeholder="Search">
+        </div>
+        <div class="buttons">
+            <button class="header-button">
+                Home
+            </button>
+            <button class="header-button">
+                Discover
+            </button>
+            <button class="header-button">
+                Messages
+            </button>
+            <button class="header-button">
+                Profile
+            </button>
+        </div>
+    </div>
+
+    <div id="content" class="content"></div>
+
+    <script type="text/babel">
+        const profiles = [
+            {
+                id: "1",
+                name: "Lorem Ipsum",
+                intro: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                pictureURL: "https://i.imgur.com/O9Wmyek.jpeg",
+                backgroundURL: "https://i.imgur.com/Ddu7o5o.jpeg"
+            },
+            {
+                id: "2",
+                name: "Lorem Ipsum",
+                intro: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                pictureURL: "https://i.imgur.com/O9Wmyek.jpeg",
+                backgroundURL: "https://i.imgur.com/Ddu7o5o.jpeg"
+            },
+            {
+                id: "3",
+                name: "Lorem Ipsum",
+                intro: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                pictureURL: "https://i.imgur.com/O9Wmyek.jpeg",
+                backgroundURL: "https://i.imgur.com/Ddu7o5o.jpeg"
+            },
+            {
+                id: "4",
+                name: "Lorem Ipsum",
+                intro: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                pictureURL: "https://i.imgur.com/O9Wmyek.jpeg",
+                backgroundURL: "https://i.imgur.com/Ddu7o5o.jpeg"
+            },
+            {
+                id: "5",
+                name: "Lorem Ipsum",
+                intro: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                pictureURL: "https://i.imgur.com/O9Wmyek.jpeg",
+                backgroundURL: "https://i.imgur.com/Ddu7o5o.jpeg"
+            },
+            {
+                id: "6",
+                name: "Lorem Ipsum",
+                intro: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                pictureURL: "https://i.imgur.com/O9Wmyek.jpeg",
+                backgroundURL: "https://i.imgur.com/Ddu7o5o.jpeg"
+            },
+        ]
+    
+        function Profiles() {
+            return (
+                <div id="profiles" className="profiles">
+                    {profiles.map((profile) => (
+                        <div key={profile.id} className="profile-card">
+                            <div className="background">
+                                <img src={profile.backgroundURL} alt="background image"/>
+                                <div className="profile-picture">
+                                    <img src={profile.pictureURL} alt="profile picture"/>
+                                </div>
+                            </div>
+                            <div className="text-info">
+                                <h3>{profile.name}</h3>
+                                <p className="intro">{profile.intro}</p>
+                                <button className="connect-button">
+                                    Connect
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            );
+        }
+
+        ReactDOM.render(<Profiles />, document.getElementById("content"));
+    </script>
+</body>
+</html>
